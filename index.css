@@ -1,0 +1,508 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 16px; /* Base font size for scaling */
+    line-height: 1.5;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem clamp(1rem, 2vw, 2rem); /* Scales padding */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping */
+    max-width: 100%; /* Prevents overflow */
+}
+
+.logo {
+    font-size: clamp(1.2rem, 3vw, 1.5rem); /* Scales logo size */
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap; /* Links wrap if needed */
+    gap: 1rem; /* Consistent spacing */
+    margin-left: 0; /* Remove fixed margin */
+}
+
+.nav-links li {
+    margin-left: 0; /* Remove fixed margin */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-secondary {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #c0392b;
+}
+
+.container {
+    max-width: 100%; /* Full width usage */
+    width: 90%; /* Breathing room */
+    margin: 0 auto;
+    padding: clamp(1rem, 2vw, 2rem); /* Scales padding */
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Wraps if needed */
+    gap: clamp(1rem, 2vw, 2rem); /* Dynamic gap */
+    margin-bottom: 3rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Scales dynamically */
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%; /* Scales with container */
+    max-width: min(500px, 100vw); /* Caps at 500px or viewport */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); /* Fluid columns */
+    gap: clamp(1rem, 2vw, 2rem); /* Dynamic gap */
+    margin-bottom: 3rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card-header {
+    padding: 1rem;
+    background-color: #3498db;
+    color: white;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-footer {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap; /* Wraps on small screens */
+    gap: clamp(0.5rem, 1vw, 1rem); /* Dynamic spacing */
+}
+
+.tab {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.tab.active {
+    border-color: #3498db;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Wraps on small screens */
+    gap: clamp(1rem, 2vw, 2rem); /* Dynamic spacing */
+    margin: 1rem 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Sign In Page Styles */
+.auth-container {
+    width: 90%; /* Fluid width */
+    max-width: min(500px, 100vw); /* Caps at 500px or viewport */
+    margin: clamp(2rem, 4vw, 4rem) auto; /* Scales margin */
+    padding: clamp(1rem, 2vw, 2rem); /* Scales padding */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-header h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+    color: #7f8c8d;
+}
+
+.auth-form .btn {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #7f8c8d;
+}
+
+.auth-footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+.auth-options1 {
+    display: flex;
+    border-radius: 6px;
+    box-shadow: 1.5 1.5 #7f8c8d;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.auth-option {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.auth-option:hover {
+    background-color: #f5f5f5;
+    border-color: #3498db;
+}
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: #7f8c8d;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    flex: 1;
+    border-top: 1px solid #ddd;
+}
+
+.auth-divider span {
+    padding: 0 1rem;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: 0.5rem;
+}
+
+.forgot-password a {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.remember-me input {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%; /* Fluid width */
+    max-width: min(500px, 100vw); /* Caps at 500px or viewport */
+    margin: 0 clamp(1rem, 2vw, 2rem); /* Scales margin */
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #7f8c8d;
+}
+
+.close-modal:hover {
+    color: #2c3e50;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        justify-content: space-around;
+        text-align: center;
+    }
+    .nav-links {
+        flex-direction: row;
+        width: 100%;
+        gap: 0.5rem;
+    }
+    .buttons {
+        flex-direction: row;
+        width: 100%;
+        gap: 0.5rem;
+    }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image {
+        margin-top: clamp(1rem, 2vw, 2rem);
+    }
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    .auth-options {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .nav-links {
+        gap: 0.75rem;
+    }
+    .hero-content h1 {
+        font-size: clamp(1.8rem, 4vw, 2rem);
+    }
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1200px; /* Retains original cap */
+    }
+    .hero-content h1 {
+        font-size: 2.5rem; /* Restores original size */
+    }
+    .cards {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+    }
+}
+
+
+/* Background Image Container */
+.background-image {
+    position: fixed; /* Stays in place */
+    top: 0; /* Starts at top */
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('workers.avif'); /* Replace with your image URL */
+    background-size: cover; /* Scales to cover screen */
+    background-position: center; /* Centers image */
+    opacity: 0.2; /* Low opacity for subtlety */
+    z-index: -1; /* Behind all content */
+}
+
+/* Content Wrapper to Ensure Readability */
+.content-wrapper {
+    position: relative; /* Stays above background */
+    z-index: 1; /* Above background image */
+    background-color: rgba(245, 245, 245, 0.9); /* Slight white overlay for contrast */
+}
+
+/* Adjust Header to Stay Solid */
+header {
+    position: relative; /* Keeps it above background */
+    z-index: 2; /* Above background image */
+    background-color: #2c3e50; /* Ensure solid color, no transparency */
+}
+
+/* Ensure Main and Footer Stay Readable */
+main, footer {
+    position: relative; /* Keeps them in flow */
+}
